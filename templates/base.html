@@ -1,0 +1,294 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary SEO -->
+    <title>{{ page_title | default("Patriot Mobile Auto Repair | Cookeville, TN") }}</title>
+
+    <meta name="description"
+          content="{{ meta_description | default('Veteran-owned mobile auto repair serving Cookeville and surrounding communities in Tennessee.') }}">
+
+    <!-- Keep unsolicited demo out of search results -->
+    <meta name="robots" content="noindex, nofollow">
+
+    <meta name="theme-color" content="#0b0d10">
+
+    <!-- Social sharing -->
+    <meta property="og:title"
+          content="Patriot Mobile Auto Repair | Built on Integrity. Driven by Duty.">
+
+    <meta property="og:description"
+          content="Professional mobile automotive repair in Cookeville, Tennessee.">
+
+    <!-- Fonts -->
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Jost:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+    <script src="{{ url_for('static', filename='script.js') }}"
+            defer></script>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header class="header" id="header">
+
+        <button class="menu-toggle"
+                id="menuToggle"
+                aria-label="Open navigation"
+                aria-controls="navigation"
+                aria-expanded="false">
+            <span></span>
+            <span></span>
+        </button>
+
+
+        <a href="{{ url_for('index') }}" class="brand" aria-label="Patriot Mobile Auto Repair homepage">
+
+            <svg class="patriot-logo"
+                width="150"
+                height="53"
+                viewBox="0 0 340 120"
+                xmlns="http://www.w3.org/2000/svg"
+                role="img"
+                aria-label="Patriot Mobile Auto Repair">
+
+                <defs>
+
+                    <!-- Metallic silver lettering -->
+                    <linearGradient id="patriotSilver"
+                                    x1="0%" y1="0%"
+                                    x2="0%" y2="100%">
+                        <stop offset="0%" stop-color="#ffffff"/>
+                        <stop offset="46%" stop-color="#d5d7da"/>
+                        <stop offset="52%" stop-color="#8b9097"/>
+                        <stop offset="100%" stop-color="#e2e4e7"/>
+                    </linearGradient>
+
+                    <!-- Transparent spacing around star -->
+                    <mask id="patriotStarGap">
+                        <rect width="340" height="120" fill="white"/>
+
+                        <path d="M170 3 L179 25 L203 25
+                                L184 40 L191 63 L170 49
+                                L149 63 L156 40 L137 25
+                                L161 25 Z"
+                            fill="black"
+                            stroke="black"
+                            stroke-width="12"
+                            stroke-linejoin="round"/>
+                    </mask>
+
+                </defs>
+
+                <!-- Horizontal red stripes -->
+                <g fill="#b32630" mask="url(#patriotStarGap)">
+
+                    <!-- Left -->
+                    <path d="M44 17 H170 V23 H54 Z"/>
+                    <path d="M28 30 H170 V36 H38 Z"/>
+                    <path d="M12 43 H170 V49 H22 Z"/>
+
+                    <!-- Right -->
+                    <path d="M170 17 H296 L286 23 H170 Z"/>
+                    <path d="M170 30 H312 L302 36 H170 Z"/>
+                    <path d="M170 43 H328 L318 49 H170 Z"/>
+
+                </g>
+
+                <!-- Silver star -->
+                <path fill="#e2e4e7"
+                    d="M170 3 L179 25 L203 25
+                        L184 40 L191 63 L170 49
+                        L149 63 L156 40 L137 25
+                        L161 25 Z"/>
+
+                <!-- Star shading -->
+                <path fill="#858b94"
+                    d="M170 3 L170 35 L137 25 L161 25 Z
+                        M170 35 L191 63 L170 49 Z
+                        M170 35 L203 25 L184 40 Z"/>
+
+                <!-- PATRIOT lettering -->
+                <text x="170"
+                    y="111"
+                    text-anchor="middle"
+                    font-family="Arial, sans-serif"
+                    font-weight="900"
+                    font-size="56"
+                    textLength="315"
+                    lengthAdjust="spacingAndGlyphs"
+                    fill="url(#patriotSilver)">
+                    PATRIOT
+                </text>
+
+            </svg>
+
+        </a>
+
+
+        <nav class="navigation" id="navigation">
+            <a href="{{ url_for('services') }}">Services</a>
+            <a href="#about">Our Story</a>
+            <a href="#reviews">Reviews</a>
+            <a href="#areas">Service Areas</a>
+        </nav>
+
+        <a href="{{ url_for('contact') }}"
+           class="header-cta">
+            Request Service
+        </a>
+
+    </header>
+
+
+    <!-- Content changes depending on page -->
+
+    {% block content %}
+    {% endblock %}
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+
+        <div class="footer-top container">
+
+
+        <div class="footer-brand">
+
+            <svg class="patriot-logo"
+                width="150"
+                height="53"
+                viewBox="0 0 340 120"
+                xmlns="http://www.w3.org/2000/svg"
+                role="img"
+                aria-label="Patriot Mobile Auto Repair">
+
+                <defs>
+
+                    <linearGradient id="footerPatriotSilver"
+                                    x1="0%" y1="0%"
+                                    x2="0%" y2="100%">
+                        <stop offset="0%" stop-color="#ffffff"/>
+                        <stop offset="46%" stop-color="#d5d7da"/>
+                        <stop offset="52%" stop-color="#8b9097"/>
+                        <stop offset="100%" stop-color="#e2e4e7"/>
+                    </linearGradient>
+
+                    <mask id="footerPatriotStarGap">
+                        <rect width="340" height="120" fill="white"/>
+
+                        <path d="M170 3 L179 25 L203 25
+                                L184 40 L191 63 L170 49
+                                L149 63 L156 40 L137 25
+                                L161 25 Z"
+                            fill="black"
+                            stroke="black"
+                            stroke-width="12"
+                            stroke-linejoin="round"/>
+                    </mask>
+
+                </defs>
+
+                <!-- Red stripes -->
+                <g fill="#b32630" mask="url(#footerPatriotStarGap)">
+
+                    <path d="M44 17 H170 V23 H54 Z"/>
+                    <path d="M28 30 H170 V36 H38 Z"/>
+                    <path d="M12 43 H170 V49 H22 Z"/>
+
+                    <path d="M170 17 H296 L286 23 H170 Z"/>
+                    <path d="M170 30 H312 L302 36 H170 Z"/>
+                    <path d="M170 43 H328 L318 49 H170 Z"/>
+
+                </g>
+
+                <!-- Silver star -->
+                <path fill="#e2e4e7"
+                    d="M170 3 L179 25 L203 25
+                        L184 40 L191 63 L170 49
+                        L149 63 L156 40 L137 25
+                        L161 25 Z"/>
+
+                <!-- Star shading -->
+                <path fill="#858b94"
+                    d="M170 3 L170 35 L137 25 L161 25 Z
+                        M170 35 L191 63 L170 49 Z
+                        M170 35 L203 25 L184 40 Z"/>
+
+                <!-- PATRIOT lettering -->
+                <text x="170"
+                    y="111"
+                    text-anchor="middle"
+                    font-family="Arial, sans-serif"
+                    font-weight="900"
+                    font-size="56"
+                    textLength="315"
+                    lengthAdjust="spacingAndGlyphs"
+                    fill="url(#footerPatriotSilver)">
+                    PATRIOT
+                </text>
+
+            </svg>
+
+            <p>
+            Built on Integrity.<br>
+            Driven by Duty.
+        </p>
+
+        </div>
+
+
+            <div class="footer-links">
+                <h3>Explore</h3>
+
+                <a href="{{ url_for('services') }}">Services</a>
+                <a href="#about">Our Story</a>
+                <a href="#standard">The Patriot Standard</a>
+                <a href="#reviews">Customer Reviews</a>
+            </div>
+
+            <div class="footer-links">
+                <h3>Service</h3>
+
+                <a href="#areas">Service Areas</a>
+                <a href="{{ url_for('contact') }}">Request Service</a>
+
+                <p>Cookeville, Tennessee</p>
+                <p>Veteran-Owned Business</p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom container">
+
+            <p>
+                &copy; <span id="year">2026</span>
+                Patriot Mobile Auto Repair LLC.
+            </p>
+
+            <p>Independent website concept.</p>
+
+        </div>
+
+    </footer>
+
+</body>
+</html>

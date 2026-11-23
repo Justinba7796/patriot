@@ -1,0 +1,659 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <main>
+
+        <!-- HERO -->
+
+        <section class="hero" id="home">
+
+            <div class="hero-overlay"></div>
+
+            <div class="hero-content">
+
+                <p class="eyebrow">
+                    Veteran-Owned. Community Focused.
+                </p>
+
+                <h1>
+                    Built on Integrity.<br>
+                    Driven by Duty.
+                </h1>
+
+                <div class="accent-line"></div>
+
+                <p class="hero-description">
+                    Your trusted mobile mechanic
+                    in Cookeville, Tennessee.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="{{ url_for('contact') }}"
+                       class="button button-light">
+                        Request Service
+                    </a>
+
+                    <a href="#services"
+                       class="button button-outline">
+                        Explore Services
+                    </a>
+
+                </div>
+
+            </div>
+
+            <a href="#introduction"
+               class="scroll-indicator"
+               aria-label="Scroll to introduction">
+
+                <span>Discover Patriot</span>
+
+                <div class="scroll-arrow"></div>
+
+            </a>
+
+        </section>
+
+
+        <!-- INTRODUCTION -->
+
+        <section class="introduction light-section"
+                 id="introduction">
+
+            <div class="container reveal">
+
+                <p class="eyebrow">
+                    Professional Automotive Care
+                </p>
+
+                <h2>
+                    Your Mechanic.<br>
+                    Your Location.
+                </h2>
+
+                <p class="section-description">
+                    Automotive repair shouldn't disrupt your life.
+                    Patriot Mobile Auto Repair brings knowledgeable
+                    diagnostics, honest recommendations and convenient
+                    automotive service directly to you.
+                </p>
+
+                <div class="trust-bar">
+
+                    <div class="trust-item">
+                        <span class="trust-star">★</span>
+                        <h3>Veteran-Owned</h3>
+                        <p>Built on integrity and discipline.</p>
+                    </div>
+
+                    <div class="trust-item">
+                        <span class="trust-star">★</span>
+                        <h3>Locally Operated</h3>
+                        <p>Serving the Cookeville community.</p>
+                    </div>
+
+                    <div class="trust-item">
+                        <span class="trust-star">★</span>
+                        <h3>Mobile Convenience</h3>
+                        <p>Professional repairs at your location.</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SERVICES -->
+
+        <section class="services light-section" id="services">
+
+            <div class="container">
+
+                <div class="section-heading reveal">
+
+                    <p class="eyebrow">
+                        Expertise That Comes to You
+                    </p>
+
+                    <h2>Explore Our Services</h2>
+
+                    <p class="section-description">
+                        Professional mobile automotive repair,
+                        diagnostics and maintenance in Cookeville, TN.
+                    </p>
+
+                </div>
+
+                <!-- Interactive service categories -->
+
+                <div class="service-tabs"
+                     role="group"
+                     aria-label="Service categories">
+
+                    <button class="service-tab active"
+                            data-category="repairs"
+                            aria-pressed="true">
+                        Repairs
+                    </button>
+
+                    <button class="service-tab"
+                            data-category="diagnostics"
+                            aria-pressed="false">
+                        Diagnostics
+                    </button>
+
+                    <button class="service-tab"
+                            data-category="maintenance"
+                            aria-pressed="false">
+                        Maintenance
+                    </button>
+
+                </div>
+
+
+                <!-- REPAIR CATEGORY -->
+
+                <div class="service-grid"
+                     data-panel="repairs">
+
+                    <article class="service-card">
+
+                        <div class="service-image brake-image"></div>
+
+                        <div class="service-content">
+
+                            <p class="service-number">01</p>
+
+                            <h3>Brake Repair</h3>
+
+                            <p>
+                                Address grinding, squeaking and
+                                reduced braking performance with
+                                professional mobile brake service.
+                            </p>
+
+                            <a href="{{ url_for('contact', service='Brake Services') }}" class="text-link">
+                                Request Service <span>→</span>
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="service-card">
+
+                        <div class="service-image starting-image"></div>
+
+                        <div class="service-content">
+
+                            <p class="service-number">02</p>
+
+                            <h3>Starting & Charging</h3>
+
+                            <p>
+                                Professional diagnosis of battery,
+                                starter and alternator problems
+                                when your vehicle won't start.
+                            </p>
+
+                            <a href="{{ url_for('contact', service='Starting / Charging') }}" class="text-link">
+                                Request Service <span>→</span>
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="service-card">
+
+                        <div class="service-image cooling-image"></div>
+
+                        <div class="service-content">
+
+                            <p class="service-number">03</p>
+
+                            <h3>Cooling & Air Conditioning</h3>
+
+                            <p>
+                                Diagnose overheating, cooling system
+                                problems and air conditioning issues
+                                at your location.
+                            </p>
+
+                            <a href="{{ url_for('contact', service='Cooling / Air Conditioning') }}" class="text-link">
+                                Request Service <span>→</span>
+                            </a>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+
+                <!-- DIAGNOSTICS CATEGORY -->
+
+                <div class="service-grid"
+                     data-panel="diagnostics"
+                     hidden>
+
+                    <article class="service-card">
+
+                        <div class="service-image diagnostic-image"></div>
+
+                        <div class="service-content">
+
+                            <p class="service-number">01</p>
+
+                            <h3>Engine Diagnostics</h3>
+
+                            <p>
+                                Identify the source of engine performance
+                                issues through professional automotive
+                                testing and diagnostics.
+                            </p>
+
+                            <a href="{{ url_for('contact', service='Engine Diagnostics') }}" class="text-link">
+                                Request Diagnostics <span>→</span>
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="service-card">
+
+                        <div class="service-image electrical-image"></div>
+
+                        <div class="service-content">
+
+                            <p class="service-number">02</p>
+
+                            <h3>Electrical Diagnostics</h3>
+
+                            <p>
+                                Investigate common automotive electrical
+                                problems and starting system concerns.
+                            </p>
+
+                            <a href="	{{ url_for('contact', service='Electrical Diagnostics') }}" class="text-link">
+                                Request Diagnostics <span>→</span>
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="service-card">
+
+                        <div class="service-image warning-image"></div>
+
+                        <div class="service-content">
+
+                            <p class="service-number">03</p>
+
+                            <h3>Check Engine Light</h3>
+
+                            <p>
+                                Understand what your vehicle is telling
+                                you before committing to unnecessary
+                                replacement parts.
+                            </p>
+
+                            <a href="{{ url_for('contact', service='Check Engine Light') }}" class="text-link">
+                                Request Diagnostics <span>→</span>
+                            </a>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+
+                <!-- MAINTENANCE CATEGORY -->
+
+                <div class="service-grid"
+                     data-panel="maintenance"
+                     hidden>
+
+                    <article class="service-card">
+
+                        <div class="service-image oil-image"></div>
+
+                        <div class="service-content">
+
+                            <p class="service-number">01</p>
+
+                            <h3>Oil & Fluid Service</h3>
+
+                            <p>
+                                Convenient routine vehicle maintenance
+                                to help keep your vehicle performing
+                                reliably.
+                            </p>
+
+                            <a href="{{ url_for('contact', service='Oil and Fluid Services') }}" class="text-link">
+                                Request Service <span>→</span>
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="service-card">
+
+                        <div class="service-image inspection-image"></div>
+
+                        <div class="service-content">
+
+                            <p class="service-number">02</p>
+
+                            <h3>Pre-Purchase Inspections</h3>
+
+                            <p>
+                                Make a more informed decision before
+                                purchasing your next vehicle with a
+                                professional inspection.
+                            </p>
+
+                            <a href="{{ url_for('contact', service='Pre-Purchase Inspection') }}" class="text-link">
+                                Request Inspection <span>→</span>
+                            </a>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ABOUT -->
+
+        <section class="story" id="about">
+
+            <div class="story-image"></div>
+
+            <div class="story-content reveal">
+
+                <p class="eyebrow">
+                    Our Story
+                </p>
+
+                <h2>
+                    The Uniform Changed.<br>
+                    The Commitment Didn't.
+                </h2>
+
+                <div class="accent-line"></div>
+
+                <p>
+                    Patriot Mobile Auto Repair is built around
+                    the principles of military service:
+                    integrity, discipline, responsibility
+                    and commitment to others.
+                </p>
+
+                <p>
+                    As a veteran-owned business, Patriot brings
+                    those values into automotive repair,
+                    serving Cookeville and the surrounding community
+                    with a personal approach to vehicle care.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- CUSTOMER REPUTATION -->
+
+        <section class="reviews light-section" id="reviews">
+
+            <div class="container reveal">
+
+                <p class="eyebrow">
+                    Earned. Not Given.
+                </p>
+
+                <h2>
+                    A Reputation Built<br>
+                    Through Service.
+                </h2>
+
+                <div class="reputation-words">
+                    <span>Honest</span>
+                    <span>Reliable</span>
+                    <span>Knowledgeable</span>
+                </div>
+
+                <div class="review-slider">
+
+                    <button class="review-arrow"
+                            id="previousReview"
+                            aria-label="Previous reputation theme">
+                        ←
+                    </button>
+
+                    <div class="review-display"
+                         aria-live="polite">
+
+                        <p class="review-label">
+                            Customer Reputation
+                        </p>
+
+                        <h3 id="reviewTitle">
+                            Honest Communication
+                        </h3>
+
+                        <p id="reviewText">
+                            Customers appreciate straightforward
+                            explanations and knowledgeable
+                            automotive advice.
+                        </p>
+
+                        <div class="review-dots"
+                             id="reviewDots"></div>
+
+                    </div>
+
+                    <button class="review-arrow"
+                            id="nextReview"
+                            aria-label="Next reputation theme">
+                        →
+                    </button>
+
+                </div>
+
+                <!-- Reputation summaries, not direct quotations -->
+
+                <a href="https://www.google.com/maps/search/?api=1&query=Patriot+Mobile+Auto+Repair+Cookeville+TN"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="button button-dark-outline">
+                    Explore Customer Reviews
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- SERVICE AREAS -->
+
+        <section class="service-areas" id="areas">
+
+            <div class="area-overlay"></div>
+
+            <div class="area-content reveal">
+
+                <p class="eyebrow">
+                    Proudly Serving Tennessee
+                </p>
+
+                <h2>
+                    Wherever Life<br>
+                    Takes You.
+                </h2>
+
+                <p>
+                    Convenient mobile automotive repair
+                    throughout the Cookeville area.
+                </p>
+
+                <div class="area-locations">
+                    <span>Cookeville</span>
+                    <span>Algood</span>
+                </div>
+
+                <a href="{{ url_for('contact') }}"
+                   class="button button-light">
+                    Check Service Availability
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- FREQUENTLY ASKED QUESTIONS -->
+
+        <section class="faq light-section">
+
+            <div class="container faq-container reveal">
+
+                <p class="eyebrow">
+                    Frequently Asked Questions
+                </p>
+
+                <h2>
+                    Straightforward Answers.<br>
+                    No Guesswork.
+                </h2>
+
+                <div class="faq-list">
+
+                    <details>
+                        <summary>
+                            What is a mobile mechanic?
+                        </summary>
+
+                        <p>
+                            A mobile mechanic performs eligible
+                            automotive diagnostics, maintenance
+                            and repairs at your location instead
+                            of requiring a visit to a traditional shop.
+                        </p>
+                    </details>
+
+                    <details>
+                        <summary>
+                            Can you repair my car at home or work?
+                        </summary>
+
+                        <p>
+                            Mobile repairs may be performed at a
+                            suitable home or workplace location,
+                            depending on the repair, available space
+                            and property permission.
+                        </p>
+                    </details>
+
+                    <details>
+                        <summary>
+                            What if my car won't start?
+                        </summary>
+
+                        <p>
+                            Starting problems can involve your battery,
+                            starter, charging system or electrical
+                            components. Diagnostics help determine
+                            the actual cause.
+                        </p>
+                    </details>
+
+                    <details>
+                        <summary>
+                            How much does mobile auto repair cost?
+                        </summary>
+
+                        <p>
+                            Pricing depends on the vehicle, requested
+                            service, required parts and diagnostic
+                            work. Contact Patriot to discuss your
+                            specific repair needs.
+                        </p>
+                    </details>
+
+                    <details>
+                        <summary>
+                            Are all repairs possible on-site?
+                        </summary>
+
+                        <p>
+                            Some repairs require specialized shop
+                            equipment or facilities. Contact Patriot
+                            to determine whether your vehicle can
+                            be serviced at your location.
+                        </p>
+                    </details>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CONTACT -->
+
+        <section class="contact" id="contact">
+
+            <div class="container reveal">
+
+                <p class="eyebrow">
+                    Patriot Mobile Auto Repair
+                </p>
+
+                <h2>
+                    Ready to Serve.<br>
+                    Ready to Repair.
+                </h2>
+
+                <p>
+                    Tell us about your vehicle and discover
+                    the convenience of professional mobile
+                    automotive service.
+                </p>
+
+                <a href="{{ url_for('contact') }}"
+                   class="button button-light">
+                    Request Service
+                </a>
+
+                <p class="demo-notice" id="demoNotice">
+                    Website concept preview.
+                    Online service requests are not yet enabled.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+{% endblock %}
+

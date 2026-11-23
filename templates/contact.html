@@ -1,0 +1,122 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+
+<main class="contact-page">
+
+    <section class="contact-intro">
+        <div class="container">
+
+            <p class="section-eyebrow">
+                PATRIOT MOBILE AUTO REPAIR
+            </p>
+
+            <h1>Let's Get You Back on the Road.</h1>
+
+            <p>
+                Tell us what your vehicle needs.
+                We're here to help.
+            </p>
+
+        </div>
+    </section>
+
+    <section class="contact-form-section">
+        <div class="container">
+
+            <div class="contact-form-card">
+
+                <p class="contact-demo-note">
+                    DEMONSTRATION FORM —
+                    NOT ACCEPTING SUBMISSIONS
+                </p>
+
+                <form id="contactForm">
+
+                    <div class="contact-field">
+                        <label for="full_name">
+                            Full Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="full_name"
+                            name="full_name"
+                            placeholder="Your name"
+                            autocomplete="name"
+                        >
+                    </div>
+
+                    <div class="contact-field">
+                        <label for="email">
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="you@example.com"
+                            autocomplete="email"
+                        >
+                    </div>
+
+                    <div class="contact-field">
+                        <label for="service">
+                            Service Needed
+                        </label>
+
+                        <select id="service" name="service">
+
+                            <option value="">
+                                Select a service
+                            </option>
+
+                            {% for service in service_options %}
+
+                            <option
+                                value="{{ service }}"
+                                {% if service == selected_service %}
+                                selected
+                                {% endif %}
+                            >
+                                {{ service }}
+                            </option>
+
+                            {% endfor %}
+
+                        </select>
+                    </div>
+
+                    <div class="contact-field">
+                        <label for="message">
+                            How Can We Help?
+                        </label>
+
+                        <textarea
+                            id="message"
+                            name="message"
+                            rows="6"
+                            placeholder="Describe your vehicle issue..."
+                        ></textarea>
+                    </div>
+
+                    <button
+                        type="button"
+                        class="contact-submit"
+                        disabled
+                    >
+                        REQUEST SERVICE — DEMO ONLY
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+    </section>
+
+</main>
+
+{% endblock %}

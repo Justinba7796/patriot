@@ -1,0 +1,77 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+
+<main class="services-page">
+
+    <section class="services-intro">
+        <div class="container">
+
+            <p class="section-eyebrow">
+                PATRIOT MOBILE AUTO REPAIR
+            </p>
+
+            <h1>Mobile Auto Repair Services</h1>
+
+            <p>
+                Dependable automotive care delivered
+                directly to your location.
+            </p>
+
+        </div>
+    </section>
+
+    <section class="services-list">
+        <div class="container">
+
+            <div class="services-grid">
+
+                {% for service in services_list %}
+
+                <article class="service-card">
+
+                    <div class="service-card-top">
+                        <span class="service-number">
+                            {{ service.symbol }}
+                        </span>
+
+                        <span class="service-line"></span>
+                    </div>
+
+                    <h2>{{ service.name }}</h2>
+
+                    <p class="service-description">
+                        {{ service.description }}
+                    </p>
+
+                    <ul class="service-features">
+
+                        {% for feature in service.features %}
+
+                        <li>{{ feature }}</li>
+
+                        {% endfor %}
+
+                    </ul>
+
+                    <a
+                        href="{{ url_for('contact', service=service.name) }}"
+                        class="service-link"
+>
+                        INQUIRE ABOUT SERVICE
+                        <span aria-hidden="true">→</span>
+                    </a>
+
+                </article>
+
+                {% endfor %}
+
+            </div>
+
+        </div>
+    </section>
+
+</main>
+
+{% endblock %}
